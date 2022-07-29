@@ -1,0 +1,121 @@
+sources:
+  - name: Airbnb
+    type: rss
+    link: https://medium.com/feed/airbnb-engineering
+  - name: Asana
+    type: rss
+    link: https://blog.asana.com/category/eng/feed/
+  - link: https://aws.amazon.com/jp/blogs/aws/feed/
+    type: rss
+    name: AWS
+#  - name: Bittorrent
+#    type: rss
+#    link: https://engineering.bittorrent.com/feed/
+  - name: Cloudera
+    type: rss
+    link: https://blog.cloudera.com/feed/
+  - name: Cloudflare
+    type: rss
+    link: https://blog.cloudflare.com/rss/
+  - name: Dropbox
+    link: https://dropbox.tech/feed
+    type: rss
+  - name: Elastic
+    type: rss
+    link: https://www.elastic.co/blog/feed
+  - name: Envoy
+    type: rss
+    link: https://envoy.engineering/feed
+  - name: Evernote
+    type: rss
+    link: https://evernote.com/blog/feed
+  - name: Facebook
+    type: rss
+    link: https://engineering.fb.com/feed/
+  - name: GitHub
+    type: rss
+    link: https://github.blog/engineering.atom
+  - name: GIPHY
+    type: rss
+    link: https://engineering.giphy.com/feed/
+  - name: Groupon
+    type: rss
+    link: https://medium.com/feed/groupon-eng
+  - name: HashiCorp
+    type: rss
+    link: https://www.hashicorp.com/blog/feed.xml
+  - name: Heroku
+    type: rss
+    link: https://blog.heroku.com/engineering/feed
+  - name: Housing.com
+    type: rss
+    link: https://medium.com/feed/engineering-housing
+  - name: Indeed
+    type: rss
+    link: https://engineering.indeedblog.com/blog/feed/
+  - name: Imgur
+    type: rss
+    link: https://blog.imgur.com/category/eng/feed/
+  - name: Instacart
+    type: rss
+    link: https://tech.instacart.com/feed
+  - name: Instagram
+    type: rss
+    link: https://instagram-engineering.com/feed
+  - name: Linkedin
+    type: rss
+    link: https://engineering.linkedin.com/blog.rss.html
+  - name: Mixpanel
+    type: rss
+    link: https://mixpanel.com/blog/feed/
+  - name: Netflix
+    type: rss
+    link: https://netflixtechblog.com/feed
+  - name: Nextdoor
+    type: rss
+    link: https://engblog.nextdoor.com/feed
+  - name: Paypal
+    type: rss
+    link: https://medium.com/feed/paypal-tech
+  - name: Paypay
+    type: rss
+    link: https://blog.paypay.ne.jp/en/category/engineering/feed/
+  - name: Pinterest
+    type: rss
+    link: https://medium.com/feed/pinterest-engineering
+  - name: Postman
+    type: rss
+    link: https://medium.com/feed/better-practices
+  - name: Snyk
+    type: rss
+    link: https://snyk.io/blog/feed/
+  - name: Slack
+    type: rss
+    link: https://slack.engineering/feed/
+  - name: Soundcloud
+    type: rss
+    link: https://developers.soundcloud.com/blog/blog.rss
+#  - name: Spotify
+#    type: rss
+#    link: https://engineering.atspotify.com/feed/
+  - name: Stripe
+    type: rss
+    link: https://stripe.com/blog/feed.rss
+  - name: Stack Overflow
+    type: rss
+    link: https://stackoverflow.blog/feed/
+  - name: Twitter
+    type: rss
+    link: https://blog.twitter.com/engineering/en_us/blog.rss
+  - name: Tinder
+    type: rss
+    link: https://medium.com/feed/tinder
+  - name: Trivago
+    type: rss
+    link: https://tech.trivago.com/rss.xml
+  - name: Uber
+    type: rss
+    link: https://eng.uber.com/feed/
+  - name: Zoom
+    type: rss
+    link: https://medium.com/feed/zoom-developer-blog
