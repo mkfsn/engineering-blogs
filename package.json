@@ -18,9 +18,12 @@
   "dependencies": {
     "gatsby": "^4.19.2",
     "gatsby-plugin-sass": "^5.19.0",
+    "gatsby-source-sql": "git+https://github.com/edgarrmondragon/gatsby-source-sql.git",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "sass": "^1.54.0"
+    "react-helmet": "^6.1.0",
+    "sass": "^1.54.0",
+    "sqlite3": "^5.0.10"
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
