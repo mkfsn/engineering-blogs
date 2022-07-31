@@ -1,5 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
+import "./PageButtons.css";
 import { SitePageContext } from "./../graphql-schema";
 
 type Props = {
@@ -19,32 +20,30 @@ export default function PageButtons({ pageContext }: Props) {
     const nums = Array.from({ length: 5 }).map((_, i) => i + start);
 
     return (
-        <div>
-            <span>
+        <div style={{textAlign: 'center'}} >
+            <button>
                 <Link to="/" rel="first">First</Link>
-            </span>
-            <br/>
+            </button>
             {!isFirst && (
-                <span>
+                <button>
                     <Link to={prev} rel="prev">Previous</Link>
-                </span>
+                </button>
             )}
             <span>
                 {nums.map((num) => (
-                    <li key={num} className={num === currentPage ? "num-active" : ""}>
+                    <button key={num} className={num === currentPage ? "num-active" : ""}>
                         <Link to={num === 1 ? "/" : `/page/${num}`}>{num}</Link>
-                    </li>
+                    </button>
                 ))}
             </span>
             {!isLast && (
-                <span>
+                <button>
                      <Link to={`/page/${next}`} rel="next">Next</Link>
-                </span>
+                </button>
             )}
-            <br/>
-            <span>
+            <button>
                 <Link to={`/page/${numPages}`} rel="last">Last</Link>
-            </span>
+            </button>
         </div>
     );
 }
