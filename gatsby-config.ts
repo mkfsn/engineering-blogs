@@ -28,6 +28,7 @@ const config: GatsbyConfig = {
           queryChain: function (x: any) {
             return x
                 .select(
+                    "posts.id as ID",
                     "posts.title as Title",
                     "posts.description as Description",
                     "posts.published_at as PublishedAt",

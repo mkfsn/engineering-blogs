@@ -817,6 +817,7 @@ type PageInfo = {
 
 type Post = Node & {
   readonly Description: Maybe<Scalars['String']>;
+  readonly ID: Maybe<Scalars['Int']>;
   readonly OriginURL: Maybe<Scalars['String']>;
   readonly PublishedAt: Maybe<Scalars['Date']>;
   readonly SourceName: Maybe<Scalars['String']>;
@@ -882,6 +883,7 @@ type PostEdge = {
 
 type PostFieldsEnum =
   | 'Description'
+  | 'ID'
   | 'OriginURL'
   | 'PublishedAt'
   | 'SourceName'
@@ -975,6 +977,7 @@ type PostFieldsEnum =
 
 type PostFilterInput = {
   readonly Description: InputMaybe<StringQueryOperatorInput>;
+  readonly ID: InputMaybe<IntQueryOperatorInput>;
   readonly OriginURL: InputMaybe<StringQueryOperatorInput>;
   readonly PublishedAt: InputMaybe<DateQueryOperatorInput>;
   readonly SourceName: InputMaybe<StringQueryOperatorInput>;
@@ -1205,6 +1208,7 @@ type Query_fileArgs = {
 
 type Query_postArgs = {
   Description: InputMaybe<StringQueryOperatorInput>;
+  ID: InputMaybe<IntQueryOperatorInput>;
   OriginURL: InputMaybe<StringQueryOperatorInput>;
   PublishedAt: InputMaybe<DateQueryOperatorInput>;
   SourceName: InputMaybe<StringQueryOperatorInput>;
@@ -2657,6 +2661,14 @@ type StringQueryOperatorInput = {
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']>>>;
   readonly regex: InputMaybe<Scalars['String']>;
 };
+
+type blogPageQueryQueryVariables = Exact<{
+  skip: Scalars['Int'];
+  limit: Scalars['Int'];
+}>;
+
+
+type blogPageQueryQuery = { readonly allPost: { readonly edges: ReadonlyArray<{ readonly node: { readonly ID: number | null, readonly Title: string | null, readonly Description: string | null, readonly PublishedAt: string | null, readonly OriginURL: string | null, readonly SourceName: string | null } }> } };
 
 type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
