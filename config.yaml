@@ -17,6 +17,9 @@ sources:
   - name: Cloudflare
     type: rss
     link: https://blog.cloudflare.com/rss/
+  - name: Datadog
+    type: rss
+    link: https://www.datadoghq.com/blog/feed
   - name: Dropbox
     link: https://dropbox.tech/feed
     type: rss
@@ -41,6 +44,9 @@ sources:
   - name: Groupon
     type: rss
     link: https://medium.com/feed/groupon-eng
+  - name: The Go Blog
+    type: rss
+    link: https://go.dev/blog/feed.atom
   - name: HashiCorp
     type: rss
     link: https://www.hashicorp.com/blog/feed.xml
@@ -62,9 +68,18 @@ sources:
   - name: Instagram
     type: rss
     link: https://instagram-engineering.com/feed
+  - name: Kubernetes
+    type: rss
+    link: https://kubernetes.io/feed.xml
   - name: Linkedin
     type: rss
     link: https://engineering.linkedin.com/blog.rss.html
+  - name: Mercari
+    type: rss
+    link: https://engineering.mercari.com/en/blog/feed.xml.xml
+  - name: Miro Engineering
+    type: rss
+    link: https://medium.com/feed/miro-engineering
   - name: Mixpanel
     type: rss
     link: https://mixpanel.com/blog/feed/
@@ -86,6 +101,9 @@ sources:
   - name: Postman
     type: rss
     link: https://medium.com/feed/better-practices
+  - name: SmartNews
+    type: rss
+    link: https://developer.smartnews.com/blog/feed
   - name: Snyk
     type: rss
     link: https://snyk.io/blog/feed/
