@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --prefix-paths && gh-pages -d public",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -19,6 +19,7 @@
     "gatsby": "^4.19.2",
     "gatsby-plugin-sass": "^5.19.0",
     "gatsby-source-sql": "git+https://github.com/edgarrmondragon/gatsby-source-sql.git",
+    "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
