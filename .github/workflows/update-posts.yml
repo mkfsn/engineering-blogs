@@ -1,9 +1,9 @@
 name: Update posts
 
 on:
-#  push:
-#    branches:
-#      - master
+  push:
+    branches:
+      - master
   schedule:
     - cron: '29,59 * * * *'
 
@@ -20,13 +20,13 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Get latest pots
+      - name: Get latest posts
         run: go run ./cmd/main.go
 
       - name: Auto commit action
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update database
+          commit_message: "[skip ci] Update database"
           branch: master
 
       - uses: enriikke/gatsby-gh-pages-action@v2
