@@ -20,6 +20,8 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - uses: c-hive/gha-yarn-cache@v2
+
       - name: Get latest posts
         run: go run ./cmd/main.go
 
