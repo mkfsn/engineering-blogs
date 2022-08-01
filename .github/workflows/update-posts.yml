@@ -1,6 +1,9 @@
 name: Update posts
 
 on:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '29,59 * * * *'
 
@@ -9,17 +12,9 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Set up Go 1.18
-        uses: actions/setup-go@v1
+      - uses: actions/setup-go@v1
         with:
           go-version: 1.18
-
-      - name: Install gatsby cli
-        run: npm install -g gatsby-cli
 
       - uses: actions/checkout@v2
         with:
@@ -32,24 +27,11 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update database
-          branch: main
+          branch: master
 
-#      - name: "Run if changes have been detected"
-#        if: steps.auto-commit-action.outputs.changes_detected == 'true'
-#        run: echo "Changes!"
-
-#      - name: "Run if no changes have been detected"
-#        if: steps.auto-commit-action.outputs.changes_detected == 'false'
-#        run: echo "No Changes!"
-
-      - name: Build Gatsby Site
-        run: gatsby build --prefix-paths
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
-          commit_message: ${{ github.event.head_commit.message }}
+          access-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-branch: gh-pages
+          gatsby-args: --prefix-paths
 
