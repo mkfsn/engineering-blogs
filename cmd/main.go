@@ -65,7 +65,7 @@ func main() {
 
 				// fmt.Printf("source: %#v\n", source)
 
-				childCtx, cancel := context.WithTimeout(ctx, time.Second*10)
+				childCtx, cancel := context.WithTimeout(ctx, time.Second*30)
 
 				fp := gofeed.NewParser()
 				feed, err := fp.ParseURLWithContext(source.Link, childCtx)
