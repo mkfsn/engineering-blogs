@@ -17,8 +17,8 @@ jobs:
           go-version: 1.18
 
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
+#        with:
+#          ref: ${{ github.head_ref }}
 
       - name: Get latest pots
         run: go run ./cmd/main.go
@@ -31,7 +31,8 @@ jobs:
 
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          access-token: ${{ secrets.GITHUB_TOKEN }}
+          # https://github.com/enriikke/gatsby-gh-pages-action/issues/27
+          access-token: x-access-token:${{ secrets.GITHUB_TOKEN }}
           deploy-branch: gh-pages
           gatsby-args: --prefix-paths
 
