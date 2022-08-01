@@ -1,9 +1,9 @@
 name: Update posts
 
 on:
-  push:
-    branches:
-      - master
+#  push:
+#    branches:
+#      - master
   schedule:
     - cron: '29,59 * * * *'
 
@@ -17,8 +17,8 @@ jobs:
           go-version: 1.18
 
       - uses: actions/checkout@v2
-#        with:
-#          ref: ${{ github.head_ref }}
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Get latest pots
         run: go run ./cmd/main.go
