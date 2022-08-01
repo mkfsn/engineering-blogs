@@ -1,0 +1,40 @@
+name: Update posts
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.18
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.18
+
+      - name: Check out source code
+        uses: actions/checkout@v1
+
+      - name: Get latest pots
+        run: go run ./cmd/main.go
+
+      - name: Auto commit action
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update database
+
+#      - name: "Run if changes have been detected"
+#        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+#        run: echo "Changes!"
+
+#      - name: "Run if no changes have been detected"
+#        if: steps.auto-commit-action.outputs.changes_detected == 'false'
+#        run: echo "No Changes!"
+
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: gh-pages
+          gatsby-args: --prefix-paths
