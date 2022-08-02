@@ -2682,5 +2682,10 @@ type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type SiteTitleQueryQuery = { readonly site: { readonly siteMetadata: { readonly title: string | null } | null } | null };
 
+type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_1_Query = { readonly allPost: { readonly edges: ReadonlyArray<{ readonly node: { readonly ID: number | null, readonly Title: string | null, readonly Description: string | null, readonly PublishedAt: string | null, readonly OriginURL: string | null, readonly SourceName: string | null } }> } };
+
 
 }

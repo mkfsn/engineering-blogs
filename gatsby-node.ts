@@ -1,7 +1,8 @@
+import {normalizeSource} from "./src/utils/strings";
 const path = require("path")
-const {normalizeSource} = require("./src/utils/strings");
 // const { createFilePath } = require("gatsby-source-filesystem")
 
+// @ts-ignore
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
@@ -47,8 +48,9 @@ exports.createPages = async ({ graphql, actions }) => {
         });
     });
 
-    const sources = new Set(posts.map(post => post.node.SourceName));
-    sources.forEach((source) => {
+    // @ts-ignore
+    const sources = new Set<string>(posts.map(post => post.node.SourceName));
+    sources.forEach((source: string) => {
         createPage({
             path: `/source/${normalizeSource(source)}`,
             component: path.resolve("./src/templates/BlogPostListBySource.tsx"),
