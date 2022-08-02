@@ -1,5 +1,6 @@
 import {graphql, PageProps} from "gatsby";
 import React, { useEffect, useState } from "react";
+// @ts-ignore
 import { BlogPaginatedQuery, SitePageContext } from "../../graphql-schema";
 import BlogPostExcerpt from "../components/BlogPostExcerpt";
 import Layout from "../components/layout";

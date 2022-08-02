@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 import "./PageButtons.css";
+// @ts-ignore
 import { SitePageContext } from "./../graphql-schema";
 
 type Props = {
