@@ -20,42 +20,69 @@ export default function PageButtons({ pageContext }: Props) {
     const nums = Array.from({ length: 5 }).map((_, i) => i + start);
 
     return (
-        <div style={{textAlign: 'center'}} >
-            <button>
-                <Link to="/" rel="first">First</Link>
-            </button>
-            {!isFirst && (
-                <button>
-                    <Link to={prev} rel="prev">Previous</Link>
-                </button>
-            )}
-            <span>
-                {nums.map((num) => (
-                    <button key={num} className={num === currentPage ? "num-active" : ""}>
-                        <Link to={num === 1 ? "/" : `/page/${num}`}>{num}</Link>
-                    </button>
-                ))}
-            </span>
-            {!isLast && (
-                <button>
-                     <Link to={`/page/${next}`} rel="next">Next</Link>
-                </button>
-            )}
-            <button>
-                <Link to={`/page/${numPages}`} rel="last">Last</Link>
-            </button>
-        </div>
-    );
+        <nav className="pagination is-centered" role="navigation" aria-label="pagination">
+            {
+                isFirst
+                    ? <a className="pagination-previous is-disabled">Previous</a>
+                    : <Link className="pagination-previous" to={prev} rel="prev">Previous</Link>
+            }
+            {
+                isLast
+                    ? <a className="pagination-next is-disabled">Next</a>
+                    : <Link className="pagination-next" to={`/page/${next}`} rel="next">Next</Link>
+            }
+            <ul className="pagination-list">
+                <li>
+                    <Link
+                        className={"pagination-link" + (currentPage === 1 ? " is-current": "") }
+                        aria-label="Goto page 1"
+                        to="/"
+                        {...(currentPage === 1 && { "aria-current": "page" })}
+                    >
+                        1
+                    </Link>
+                </li>
+                {
+                    currentPage > 5 && (<li><span className="pagination-ellipsis">&hellip;</span></li>)
+                }
+                {
+                    nums.map((num) => (
+                        <li key={num}>
+                            <Link
+                                className={"pagination-link" + (currentPage === num ? " is-current": "") }
+                                to={num === 1 ? "/" : `/page/${num}`}
+                                aria-label={`Goto page ${num}`}
+                                {...(currentPage === numPages && { "aria-current": "page" })}
+                            >
+                                {num}
+                            </Link>
+                        </li>
+                    ))
+                }
+                {
+                    currentPage <= numPages-5 && (<li><span className="pagination-ellipsis">&hellip;</span></li>)
+                }
+                <li>
+                    <Link
+                        className={"pagination-link" + (currentPage === numPages ? " is-current": "") }
+                        to={`/page/${numPages}`}
+                        aria-label={`Goto page ${numPages}`}
+                        {...(currentPage === numPages && { "aria-current": "page" })}
+                    >
+                        {numPages}
+                    </Link>
+                </li>
+            </ul>
+        </nav>
+    )
 }
 
 function getStart(currentPage: number, numPages: number): number {
-    if (currentPage < 5) {
-        return 1
+    if (currentPage <= 5) {
+        return 2
+    } else if (currentPage > numPages - 5) {
+        return numPages - 5
     }
 
-    if (currentPage > numPages - 5) {
-        return numPages - 5 + 1
-    }
-
-    return currentPage - 1
+    return currentPage - 2
 }

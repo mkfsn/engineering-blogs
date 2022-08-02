@@ -24,8 +24,8 @@ export default function BlogList({ data, pageContext, location }: Props) {
 
     return (
         <Layout>
-            <h2>Blog Posts</h2>
-            <table>
+            <h2 className="is-size-2">Blog Posts</h2>
+            <table className="table is-fullwidth">
                 <thead>
                 <tr>
                     <th>Title</th>

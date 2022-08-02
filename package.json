@@ -16,6 +16,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "bulma": "^0.9.4",
     "gatsby": "^4.19.2",
     "gatsby-plugin-sass": "^5.19.0",
     "gatsby-source-sql": "git+https://github.com/edgarrmondragon/gatsby-source-sql.git",
