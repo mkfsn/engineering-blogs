@@ -5,6 +5,7 @@ import { BlogPaginatedQuery, SitePageContext } from "../../graphql-schema";
 import BlogPostExcerpt from "../components/BlogPostExcerpt";
 import Layout from "../components/Layout";
 import PageButtonList from "../components/PageButtonList";
+import BlogPostList from "../components/BlogPostList";
 // import useJsSearch from "../util/useJsSearch";
 
 type Props = PageProps & {
@@ -20,37 +21,13 @@ export default function BlogList({ data, pageContext, location }: Props) {
     // const results = search(q);
     // const posts = q ? results : data.allMarkdownRemark.nodes;
     const posts = data.allPost.edges;
-    const nodes = posts;
-    // nodes = posts.filter((n) => new Date(n.frontmatter?.date) < new Date());
 
     return (
         <Layout>
             <h2 className="is-size-2">Blog Posts</h2>
-            <table className="table is-fullwidth">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Publish Date</th>
-                    <th>Source Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    // @ts-ignore
-                    nodes.map(({node}) => {
-                        return  (
-                            <BlogPostExcerpt key={ `track-${node.ID}` } data={node} />
-                        )
-                    }
-                    )
-                }
-                </tbody>
-            </table>
-
-            {
-                // !initialQuery && <PageButtons pageContext={pageContext} />
-                <PageButtonList pageContext={pageContext} />
-            }
+            <BlogPostList posts={posts}/>
+            {/*!initialQuery && <PageButtons pageContext={pageContext} />*/}
+            <PageButtonList pageContext={pageContext} />
         </Layout>
     );
 }
