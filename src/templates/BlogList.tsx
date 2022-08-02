@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 // @ts-ignore
 import { BlogPaginatedQuery, SitePageContext } from "../../graphql-schema";
 import BlogPostExcerpt from "../components/BlogPostExcerpt";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import PageButtons from "../components/PageButtons";
 // import useJsSearch from "../util/useJsSearch";
 
