@@ -2670,6 +2670,13 @@ type blogPageQueryQueryVariables = Exact<{
 
 type blogPageQueryQuery = { readonly allPost: { readonly edges: ReadonlyArray<{ readonly node: { readonly ID: number | null, readonly Title: string | null, readonly Description: string | null, readonly PublishedAt: string | null, readonly OriginURL: string | null, readonly SourceName: string | null } }> } };
 
+type bySourceQueryVariables = Exact<{
+  source: Scalars['String'];
+}>;
+
+
+type bySourceQuery = { readonly allPost: { readonly edges: ReadonlyArray<{ readonly node: { readonly ID: number | null, readonly Title: string | null, readonly Description: string | null, readonly PublishedAt: string | null, readonly OriginURL: string | null, readonly SourceName: string | null } }> } };
+
 type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 

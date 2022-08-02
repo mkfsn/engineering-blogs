@@ -13,7 +13,7 @@ class BlogPostList extends React.Component<Props> {
                 <tr>
                     <th>Title</th>
                     <th>Publish Date</th>
-                    <th>Source Name</th>
+                    <th>Source</th>
                 </tr>
                 </thead>
                 <tbody>

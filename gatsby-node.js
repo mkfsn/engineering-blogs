@@ -1,4 +1,5 @@
 const path = require("path")
+const {normalizeSource} = require("./src/utils/strings");
 // const { createFilePath } = require("gatsby-source-filesystem")
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -45,4 +46,15 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         });
     });
+
+    const sources = new Set(posts.map(post => post.node.SourceName));
+    sources.forEach((source) => {
+        createPage({
+            path: `/source/${normalizeSource(source)}`,
+            component: path.resolve("./src/templates/BlogPostListBySource.tsx"),
+            context: {
+                source: source,
+            },
+        });
+    })
 };
