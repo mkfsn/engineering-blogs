@@ -8,7 +8,7 @@ type Props = {
     pageContext: SitePageContext;
 };
 
-class PageButtons extends React.Component<Props> {
+class PageButtonList extends React.Component<Props> {
     render() {
         const { numPages, currentPage } = this.props.pageContext;
         if (!numPages || !currentPage) return null;
@@ -63,4 +63,4 @@ function getStart(currentPage: number, numPages: number): number {
     return currentPage - 2
 }
 
-export default PageButtons;
+export default PageButtonList;

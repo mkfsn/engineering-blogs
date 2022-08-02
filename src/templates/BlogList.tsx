@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { BlogPaginatedQuery, SitePageContext } from "../../graphql-schema";
 import BlogPostExcerpt from "../components/BlogPostExcerpt";
 import Layout from "../components/Layout";
-import PageButtons from "../components/PageButtons";
+import PageButtonList from "../components/PageButtonList";
 // import useJsSearch from "../util/useJsSearch";
 
 type Props = PageProps & {
@@ -49,7 +49,7 @@ export default function BlogList({ data, pageContext, location }: Props) {
 
             {
                 // !initialQuery && <PageButtons pageContext={pageContext} />
-                <PageButtons pageContext={pageContext} />
+                <PageButtonList pageContext={pageContext} />
             }
         </Layout>
     );
