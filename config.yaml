@@ -76,7 +76,7 @@ sources:
     link: https://engineering.linkedin.com/blog.rss.html
   - name: Mercari
     type: rss
-    link: https://engineering.mercari.com/en/blog/feed.xml.xml
+    link: https://engineering.mercari.com/en/blog/feed.xml
   - name: Miro Engineering
     type: rss
     link: https://medium.com/feed/miro-engineering
